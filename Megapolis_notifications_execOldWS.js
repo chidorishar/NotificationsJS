@@ -8,8 +8,8 @@
 // @exclude      https://sed.ugv.corp/models/*
 // @run-at       document-end
 // @icon         https://sed.ugv.corp/models/DOC/images/m-docnet.png
-// @updateURL    *
-// @downloadURL  *
+// @updateURL    https://raw.githubusercontent.com/chidorishar/NotificationsJS/Megapolis/Megapolis_notifications_execOldWS.js
+// @downloadURL  https://raw.githubusercontent.com/chidorishar/NotificationsJS/Megapolis/Megapolis_notifications_execOldWS.js
 // ==/UserScript==
 
 var logging = true;
