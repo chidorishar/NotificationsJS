@@ -1,2 +1,3 @@
-# NotificationsJS
-Notification scripts on JS for tampermonkey for Roundcube Mail and Megapolis
+# Notifications for Megapolis
+
+Notification and test scripts on JS for tampermonkey. Used for Megapolis.
