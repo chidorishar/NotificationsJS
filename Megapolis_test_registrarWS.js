@@ -42,7 +42,6 @@ var logging = false;
 })();
 
 function CreateButtons(){
-    let targetNode = document.getElementById('toolbar-1022-innerCt');
     var windoww = window.open("", "ControlPanel", "popup");
     let bodyElem = windoww.document.body;
     //clear previously created buttons
