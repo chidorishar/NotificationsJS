@@ -65,13 +65,13 @@ function CreateButtons(){
 function OnButtonClick ()
 {
     let targetNode = document.getElementById(Nodes.get(this.name));
-    switch(this.innerHTML.substring(0, 3))
+    switch(this.innerHTML.substring(0, 1))
     {
-        case 'Add':
+        case '+':
             logging ? console.log('Added el to ' + this.name) : null;
             targetNode.appendChild(document.createElement('tr'));
             break;
-        case 'Rem':
+        case '-':
             logging ? console.log('Rem el from ' + this.name) : null;
             targetNode.removeChild(targetNode.lastElementChild);
             break;
