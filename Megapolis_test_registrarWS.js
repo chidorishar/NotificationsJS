@@ -7,8 +7,8 @@
 // @include      https://sed.ugv.corp/
 // @exclude      https://sed.ugv.corp/models/*
 // @icon         https://sed.ugv.corp/models/DOC/images/m-docnet.png
-// @updateURL    https://raw.githubusercontent.com/chidorishar/NotificationsJS/Megapolis/Megapolis_test_registrarWS.js
-// @downloadURL  https://raw.githubusercontent.com/chidorishar/NotificationsJS/Megapolis/Megapolis_test_registrarWS.js
+// @updateURL    https://github.com/chidorishar/NotificationsJS/raw/Megapolis/Megapolis_test_registrarWS.js
+// @downloadURL  https://github.com/chidorishar/NotificationsJS/raw/Megapolis/Megapolis_test_registrarWS.js
 //@grant none
 // ==/UserScript==
 
