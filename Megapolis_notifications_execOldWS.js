@@ -134,27 +134,27 @@ function ShowNotification(senderElementID)
     {
         case 'ubtableview-1091':
             body = '\nВам надіслано новий документ на розгляд';
-            tag = 'megapolisSightNotif';
+            tag = 'mgplsSightNotif_execOld';
             break;
         case 'ubtableview-1379':
             body = '\nВам надіслано новий інформаційний документ';
-            tag = 'megapolisInfoNotif';
+            tag = 'mgplsInfoNotif_execOld';
             break;
         case 'ubtableview-1451':
             body = '\nВам надіслано новий вхідний документ';
-            tag = 'megapolisSignNotif';
+            tag = 'mgplsInNotif_execOld';
             break;
         case 'ubtableview-1167':
             body = '\nВам надіслано новий документ на виконання';
-            tag = 'megapolisExecNotif';
+            tag = 'mgplsExecNotif_execOld';
             break;
         case 'ubtableview-1308':
             body = '\nВам надіслано новий документ для контролю виконання завдання';
-            tag = 'megapolisRegistNotif';
+            tag = 'mgplsCntrlNotif_execOld';
             break;
         case 'ubtableview-1237':
             body = '\nВам надіслано новий документ на узгодження';
-            tag = 'megapolisReviewNotif';
+            tag = 'mgplsAgreeNotif_execOld';
             break;
     }
     let configNotification = {body: body, icon: 'https://sed.ugv.corp/models/DOC/images/m-docnet.png',
