@@ -50,14 +50,21 @@ function CreateButtons(){
        bodyElem.removeChild(bodyElem.lastChild);
     }
     windoww.resizeTo(320,400);
-    Nodes.forEach((val, key)=>{
-        bttnNames.forEach((name)=>{
+    var div, cntr = 0;
+    Nodes.forEach((val, key) => {
+        bttnNames.forEach((name) => {
+            if (!(cntr % 2))
+            {
+                div = windoww.document.createElement("div");
+                bodyElem.appendChild(div);
+            }
             let tmpBtn = windoww.document.createElement("button");
             tmpBtn.name = key;
             tmpBtn.innerHTML = name + key;
             tmpBtn.onclick = OnButtonClick;
-            bodyElem.appendChild(tmpBtn);
+            div.appendChild(tmpBtn);
             bttns.push(tmpBtn);
+            cntr++;
         });
     });
 }
