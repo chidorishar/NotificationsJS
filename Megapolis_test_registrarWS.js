@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name         Megapolis tests for registrar working space
-// @namespace    http://tampermonkey.net/
+// @namespace    SED_Megapolis
+// @homepage     https://github.com/chidorishar
 // @version      1.5
 // @description  Corpo shit
 // @author       Aga
