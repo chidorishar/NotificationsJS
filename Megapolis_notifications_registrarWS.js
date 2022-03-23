@@ -12,7 +12,7 @@
 // @downloadURL  https://raw.githubusercontent.com/chidorishar/NotificationsJS/Megapolis/Megapolis_notifications_registrarWS.js
 // ==/UserScript==
 
-var logging = true;
+var logging = false;
 
 class NodeInfo
 {
