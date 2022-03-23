@@ -1,7 +1,8 @@
 // ==UserScript==
 // @name         Megapolis notifications for registrar working space
 // @namespace    SED_Megapolis
-// @homepage     https://github.com/chidorishar
+// @source       https://github.com/chidorishar
+// @homepage     https://github.com/chidorishar/NotificationsJS/tree/Megapolis
 // @version      1.0
 // @description  corpo shit
 // @author       Aga

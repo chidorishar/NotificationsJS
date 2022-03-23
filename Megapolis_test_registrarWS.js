@@ -1,7 +1,8 @@
 // ==UserScript==
 // @name         Megapolis tests for registrar working space
 // @namespace    SED_Megapolis
-// @homepage     https://github.com/chidorishar
+// @source       https://github.com/chidorishar
+// @homepage     https://github.com/chidorishar/NotificationsJS/tree/Megapolis
 // @version      1.5
 // @description  Corpo shit
 // @author       Aga
