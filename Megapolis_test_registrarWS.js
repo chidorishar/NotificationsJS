@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Megapolis tests
+// @name         Megapolis tests for registrar working space
 // @namespace    http://tampermonkey.net/
 // @version      1.5
 // @description  Corpo shit

@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Megapolis notifications
+// @name         Megapolis notifications for registrar working space
 // @namespace    http://tampermonkey.net/
 // @version      1.0
 // @description  corpo shit
