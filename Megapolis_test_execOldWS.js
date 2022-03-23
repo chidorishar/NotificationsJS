@@ -28,8 +28,8 @@ var logging = false;
     let targetNode = null;
     let timerId = setTimeout(function tick() {
         logging ? console.log('tick') : null;
-        targetNode = document.getElementById(Nodes.get('sigh'));
-        logging ? console.log(Nodes.get('sigh')) : null;
+        targetNode = document.getElementById(Nodes.get('review'));
+        logging ? console.log(Nodes.get('review')) : null;
         if(!targetNode)
         {
             timerId = setTimeout(tick, 2000);
