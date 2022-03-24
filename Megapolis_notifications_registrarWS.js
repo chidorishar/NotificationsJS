@@ -3,7 +3,7 @@
 // @namespace    SED_Megapolis
 // @source       https://github.com/chidorishar
 // @homepage     https://github.com/chidorishar/NotificationsJS/tree/Megapolis
-// @version      1.0
+// @version      2.0
 // @description  corpo shit
 // @author       Aga
 // @include      https://sed.ugv.corp/
@@ -16,19 +16,17 @@
 
 var logging = false;
 
-class NodeInfo
+class NodeRelData
 {
-    constructor() { this.totalNumber = 0; }
+    constructor() { this.totalNumber = 0; this.notification = null; }
 };
 
-var sightingNumb = 0, infoNumb = 0, signingNumb = 0, execNumb = 0, registNumb = 0, reviewNumb = 0;
-var notification;
 var targetNodes = Array(6).fill(null);;
 //key is element ID, value is class that store unread documents number for element
 const ObservedNodesMap = new Map([
-    ['ubtableview-1658', new NodeInfo()], ['ubtableview-1588', new NodeInfo()],
-    ['ubtableview-1515', new NodeInfo()], ['ubtableview-1445', new NodeInfo()],
-    ['ubtableview-1373', new NodeInfo()], ['ubtableview-1195', new NodeInfo()]
+    ['ubtableview-1658', new NodeRelData()], ['ubtableview-1588', new NodeRelData()],
+    ['ubtableview-1515', new NodeRelData()], ['ubtableview-1445', new NodeRelData()],
+    ['ubtableview-1373', new NodeRelData()], ['ubtableview-1195', new NodeRelData()]
 ]);
 var trgNodeChilds;
 const configObserver = { attributes: true, childList: true, subtree: true };
@@ -90,9 +88,12 @@ function OnMutation(mutationsList, observer)
         if (mutation.type == 'childList')
         {
             let newNumber, oldNumber;
+            let activeNotification;
+
             trgNodeChilds = mutation.target.querySelectorAll('tr:not(.ub-grid-row-end)');
             newNumber = trgNodeChilds.length;
             oldNumber = ObservedNodesMap.get(mutation.target.id).totalNumber;
+            activeNotification = ObservedNodesMap.get(mutation.target.id).notification;
 
             logging ? console.log('A child node has been added or removed in: ') : null;
             logging ? console.log(mutation.target) : null;
@@ -105,7 +106,7 @@ function OnMutation(mutationsList, observer)
                 ObservedNodesMap.get(mutation.target.id).totalNumber = newNumber;
                 if(newNumber == 0)
                 {
-                    notification ? notification.close() : null;
+                    activeNotification ? activeNotification.close() : null;
                 }
                 else
                 {
@@ -115,7 +116,7 @@ function OnMutation(mutationsList, observer)
             }
             else
             {
-                notification ? notification.close() : null;
+                activeNotification ? activeNotification.close() : null;
             }
             logging ? console.log('nodes after changing :') : null;
             logging ? console.log(ObservedNodesMap) : null;
@@ -132,6 +133,8 @@ function ShowNotification(senderElementID)
 {
     logging ? console.log('hello from notification') : null;
     let body, tag;
+    let activeNotification;
+
     switch(senderElementID)
     {
         case 'ubtableview-1658':
@@ -162,11 +165,13 @@ function ShowNotification(senderElementID)
     let configNotification = {body: body, icon: 'https://sed.ugv.corp/models/DOC/images/m-docnet.png',
                               tag: tag, renotify: true, requireInteraction: true};
     //var zz = new Notification("ZZZ" , {});
-    notification = new Notification("Megapolis -- new incoming document", configNotification);
-    notification.onclick = function(){ window.focus(); notification.close(); }
+    activeNotification = new Notification("Megapolis -- new incoming document", configNotification);
+    activeNotification.onclick = function () { window.focus(); activeNotification.close(); }
+    ObservedNodesMap.get(senderElementID).notification = activeNotification;
 }
 
-function TryGetElementsAndBeginObserve() {
+function TryGetElementsAndBeginObserve()
+{
     logging ? console.log('tick: ' + timerCounter) : null;
     // Select the node that will be observed for mutations
     let counter = 0;
